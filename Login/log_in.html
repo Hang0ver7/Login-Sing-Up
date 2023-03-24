@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="log_in.css">
+    <title>Login</title>
+</head>
+
+<script>
+    function myLogin() {
+
+        var im = document.getElementById("mail").value;
+        var pw = document.getElementById("pssw").value;
+        //check empty password field  
+        if ((pw != "") && (im != "")) {
+
+            let result = im.includes("@");
+            if ((result == true) && (pw.length > 7)) window.location.href = "home.html";
+
+            // if (pw.length > 7) window.location.href = "home.html";
+            else alert("Email/Password incorrect");
+
+
+
+        }
+        else alert("Email/Password incorrect");
+
+
+    }
+
+
+</script>
+
+
+<body>
+    <section>
+        <div class="newaccount">
+            <div class="newaccount-val">
+                <h1>Login</h1>
+
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="text" id="mail" name="email" autocomplete="off" required>
+                    <label for="email"><b>Email</b></label>
+
+                </div>
+
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline" id="ico2" onclick="myFunction()"></ion-icon>
+                    <input type="password" id="pssw" name="pssw" onclick="verifyPassword()" required>
+                    <label for="pssw" onclick="verifyPassword()"><b>Password</b></label>
+
+                </div>
+
+                <div class="remember">
+
+                    <label>
+                        <input type="checkbox" name="remember" style="margin-bottom:15px"> Remember me
+                    </label>
+                </div>
+                <button type="submit" onclick="myLogin()" class="signupbtn">Login</button>
+
+                <div class="Register">
+                    <p>Don't have a account <a href="new_account.html">Register</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
